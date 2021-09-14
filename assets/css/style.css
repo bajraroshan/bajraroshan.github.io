@@ -304,7 +304,7 @@ main .hero-img a:hover::after{
     border: 2px solid var(--secondary-clr);
     min-height: 20rem;
     background-size: cover;
-    background-position: center ;
+    background-position: top ;
     margin-bottom: 0.5rem;
     border-radius: var(--br);
     transition: all ease 0.2s;
