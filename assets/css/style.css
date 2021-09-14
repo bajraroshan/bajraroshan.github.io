@@ -1,3 +1,4 @@
+/* Variable Declaration for the entire site */
 :root{
     --default-clr: #333;
     --primary-clr: #2B2243;
@@ -23,30 +24,20 @@
     --spacer: 50px;
     --lspacer: calc(var(--spacer)*2);
 }
+
+
+/* Universal Styling  */
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-[class*="column-"]{
-    padding: 0 1rem;
-}
-.column-full{
-    width: 100%;
-}
-.column-half{
-    width: 50%;
-}
-.column-onethird{
-    width: 33.33%;
-}
-.column-twothird{
-    width: 66.66%;
-}
+/* Defining Body background, Color and font */
 body{
     background-color: var(--secondaryy-color);
     font-family: var(--ff);
     color: var(--default-clr);
 }
+/* Heading Styling for the site */
 h1{
     font-family: var(--ff-heading);
     font-size: var(--font-l);
@@ -68,13 +59,16 @@ h4{
     font-family: var(--ff-heading);
     font-size: var(--font-m);
 }
+/* Anchor tag styling */
 a{
     text-decoration: none;
 }
+/* listing styling */
 ul{
     list-style: none;
     padding-left: 0;
 }
+/* Layout styling */
 .container{
     width: 100%;
     max-width: 1170px;
@@ -91,6 +85,23 @@ ul{
 .center{
     text-align: center;
 }
+[class*="column-"]{
+    padding: 0 1rem;
+}
+.column-full{
+    width: 100%;
+}
+.column-half{
+    width: 50%;
+}
+.column-onethird{
+    width: 33.33%;
+}
+.column-twothird{
+    width: 66.66%;
+}
+
+/* Header Styling Starts */
 header{
     position: absolute;
     top: 0;
@@ -108,11 +119,13 @@ header .wrapper{
     margin: auto;
     padding: 2rem 0;
 }
+/* Header logo typetext */
 header h1{
     color: var(--white);
     text-transform: uppercase;
     justify-content: flex-start;
 }
+/* Navigation Styling */
 header nav{
     justify-content: flex-end;
 }
@@ -149,10 +162,10 @@ header nav ul li:last-child a::after{
 header nav ul li:hover a::after{
     height: 100%;
 }
+/* Header Styling Ends */
 
-main{
-    
-}
+/* Main Content Styling Starts Here */
+/* Hero Image Styling */
 main .hero-img{
     background-image: url(../images/hero-img.jpg);
     background-size: cover;
@@ -172,7 +185,7 @@ main .hero-img::after{
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 main .hero-img .row{
@@ -204,11 +217,12 @@ main .hero-img a::after{
 main .hero-img a:hover::after{
     padding-left: .5rem;
 }
+/* About Me Section Styling */
 .about-me .row{
     justify-content: space-between;
     align-items: center;
-
 }
+/* About Me section Heading styling override */
 .about-me h3{
     margin-bottom: .5rem;
 }
@@ -216,6 +230,23 @@ main .hero-img a:hover::after{
     color: var(--primary-clr);
     margin-bottom: 1.25rem;
 }
+.about-me a.btn{
+    color: var(--white);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1.25rem;
+    background-color: var(--secondary-clr);
+    border: none;
+    font-weight: var(--fw-l);
+    cursor: pointer;
+    border-radius: var(--br);
+    transition: all ease 0.2s;
+    text-transform: uppercase;
+}
+.about-me a.btn:hover{
+    background-color: var(--primary-clr);
+}
+/* About me image styling */
 .about-me figure{
     position: relative;
 }
@@ -245,31 +276,18 @@ main .hero-img a:hover::after{
 .about-me figure img{
     border-radius: var(--br);
 }
-.about-me a.btn{
-    color: var(--white);
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-top: 1.25rem;
-    background-color: var(--secondary-clr);
-    border: none;
-    font-weight: var(--fw-l);
-    cursor: pointer;
-    border-radius: var(--br);
-    transition: all ease 0.2s;
-    text-transform: uppercase;
-}
-.about-me a.btn:hover{
-    background-color: var(--primary-clr);
-}
 
+/* Portfolio Section Styling */
 .portfolio{
     background-color: var(--primary-clr);
     padding-bottom: var(--spacer);
 }
+/* Portfolio Heading restyling */
 .portfolio h2{
     color: var(--white);
     margin-bottom: var(--spacer);
 }
+/* Cardbox styling */
 .card-box{
     flex-basis: 50%;
     margin-bottom: var(--spacer);
@@ -294,10 +312,13 @@ main .hero-img a:hover::after{
 .card-box a:hover .image-holder{
     box-shadow: 0 0 1rem rgba(255,255,255,0.7);
 }
+
+/* Contact Section Styling */
+/* Contact Heading restyling */
 .contact h2{
     padding-bottom: var(--spacer);
 }
-
+/* Contact listing styling */
 .contact-content ul li{
     padding-bottom: .5rem;
 }
@@ -307,6 +328,7 @@ main .hero-img a:hover::after{
 .contact-content ul li i{
     color: var(--primary-clr);
 }
+/* Contact Form Styling */
 .form-label{
     margin-bottom: 1rem;;
 }
@@ -343,10 +365,14 @@ main .hero-img a:hover::after{
     background-color: var(--secondary-clr);
     color: var(--primary-clr);
 }
+/* Main Content Styling Ends */
 
+/* Footer styling */
 footer{
     background-color: var(--default-clr);
     color: var(--white);
     text-align: center;
     padding: var(--spacer) 0;
 }
+
+
