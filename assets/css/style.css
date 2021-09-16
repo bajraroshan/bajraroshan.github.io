@@ -109,6 +109,9 @@ ul{
 .column-twothird{
     width: 66.66%;
 }
+.s-only{
+    display: none;
+}
 
 /* Header Styling Starts */
 header{
@@ -311,12 +314,10 @@ main .hero-img a:hover::after{
 .card-box .image-holder{
     background-color: var(--white);
     border: 2px solid var(--secondary-clr);
-    min-height: 20rem;
-    background-size: cover;
-    background-position: top ;
     margin-bottom: 0.5rem;
     border-radius: var(--br);
     transition: all ease 0.2s;
+    overflow: hidden;
 }
 .card-box a:hover .image-holder{
     box-shadow: 0 0 1rem rgba(255,255,255,0.7);
@@ -398,9 +399,6 @@ footer{
     header nav ul li a{
         padding: 0.5rem;
     }
-    .card-box .image-holder{
-        min-height: 15rem;
-    }
 }
 @media only screen and (max-width: 767px) {
     header{
@@ -427,6 +425,9 @@ footer{
         margin-top: 2rem;
         margin-bottom: 4rem;
     }
+    .about-me figure img{
+        width: 100%;
+    }
     .about-me figure::before{
         left: -1rem;
         top: -1rem;
@@ -435,6 +436,14 @@ footer{
     .card-box{
         flex-basis: 100%;
     }
+    .l-only{
+        display: none;
+    }
+    .s-only{
+        display: block;
+    }
+    .card-box .image-holder img{
+        width: 100%;;
+    }
 }
-  
 
