@@ -17,6 +17,9 @@
     --fw-n: 400;
     --fw-b: 700;
 
+    --p10: 10px;
+    --p20: 20px;
+
     --br: 0.25rem;
 
     --ma: 0 auto;
@@ -91,6 +94,9 @@ ul{
 .spacer{
     padding: var(--lspacer) 0;
 }
+.spacer-top{
+    padding-top: var(--spacer);
+}
 .center{
     text-align: center;
 }
@@ -108,6 +114,9 @@ ul{
 }
 .column-twothird{
     width: 66.66%;
+}
+.column-oneforth{
+    width: 25%;
 }
 .s-only{
     display: none;
@@ -154,6 +163,7 @@ header nav ul li a{
     color: var(--white);
     transition: padding 0.8s linear;
     position: relative;
+    cursor: pointer;
 }
 header nav ul li a::after{
     content: "";
@@ -165,6 +175,7 @@ header nav ul li a::after{
     left: 0;
     transition: height 0.2s ease-out;
     z-index: -1;
+    inset: 0px;
 }
 header nav ul li:last-child a::after{
     height: 100%;
@@ -288,6 +299,10 @@ main .hero-img a:hover::after{
 .about-me figure img{
     border-radius: var(--br);
 }
+/* Skills */
+.skills{
+    border-top: 1px dashed var(--default-clr);
+}
 
 /* Portfolio Section Styling */
 .portfolio{
@@ -302,7 +317,7 @@ main .hero-img a:hover::after{
 /* Cardbox styling */
 .card-box{
     flex-basis: 50%;
-    margin-bottom: var(--spacer);
+    margin-bottom: calc(var(--spacer)/2);
     padding: 0 1rem;
 }
 .card-box:nth-of-type(1){
@@ -311,16 +326,46 @@ main .hero-img a:hover::after{
 .card-box a{
     color: var(--white);
 }
+.single-card{
+    transition: all ease 0.2s;
+}
 .card-box .image-holder{
     background-color: var(--white);
     border: 2px solid var(--secondary-clr);
-    margin-bottom: 0.5rem;
-    border-radius: var(--br);
+    border-radius: var(--br) var(--br) 0 0;
     transition: all ease 0.2s;
     overflow: hidden;
 }
-.card-box a:hover .image-holder{
+.card-box .image-holder img{ 
+    transition: all ease 0.2s;
+}
+.card-box:hover .image-holder img{ 
+    transform: scale(1.1);
+}
+.card-box:hover .single-card{
     box-shadow: 0 0 1rem rgba(255,255,255,0.7);
+}
+.card-box .content-holder{
+    background-color: var(--secondary-clr);
+    border-radius: 0 0 var(--br) var(--br) ;
+    padding: var(--p10) var(--p20);
+    font-weight: var(--fw-l);
+}
+.card-btn-wrap{
+    margin: 1rem 0;
+}
+.card-btn-wrap a{
+    border: 1px solid var(--default-clr);
+    padding: 0.5rem 1rem;
+    border-radius: var(--br);
+    background-color: var(--default-clr);
+    margin-right: 0.5rem;
+    transition: all ease 0.2s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.card-btn-wrap a:hover{
+    background-color: var(--primary-clr);
 }
 
 /* Contact Section Styling */
@@ -415,6 +460,10 @@ footer{
     .column-half, .column-onethird{
         width: 100%;
     }
+    .column-oneforth{
+        width: 50%;
+        margin-top: 1rem;
+    }
     .about-me .column-onethird{
         order: 1;
     }
@@ -446,4 +495,8 @@ footer{
         width: 100%;;
     }
 }
-
+@media only screen and (max-width: 640px) {
+    .column-oneforth{
+        width: 100%;
+    }
+}
