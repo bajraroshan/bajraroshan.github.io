@@ -1,17 +1,26 @@
-var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
-
-var hamburgers = document.querySelectorAll(".hamburger");
-
-if (hamburgers.length > 0) {
-    forEach(hamburgers, function(hamburger) {
-    hamburger.addEventListener("click", function() {
-        this.classList.toggle("is-active");
-    }, false);
-    });
-}
-$(document).ready(function() {
-    $("#basic-form").validate({
-    errorClass: "error fail-alert",
-    validClass: "valid success-alert"
-});
-});
+jQuery('.slick').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });

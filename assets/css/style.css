@@ -307,6 +307,14 @@ main .hero-img a:hover::after{
     margin-top: var(--spacer);
 }
 
+/* Slick Slider */
+.slick-list{
+    margin-bottom: var(--spacer);
+}
+.slick-next:before, .slick-prev:before{
+    color : var(--primary-clr)
+}
+
 /* Portfolio Section Styling */
 .portfolio{
     background-color: var(--primary-clr);
@@ -499,6 +507,13 @@ footer{
     }
     .card-box .image-holder img{
         width: 100%;;
+    }
+    .slick-next{
+        right: 0;
+    }
+    .slick-prev{
+        left: 0;
+        z-index: 1;
     }
 }
 @media only screen and (max-width: 640px) {
