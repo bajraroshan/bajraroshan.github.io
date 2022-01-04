@@ -303,6 +303,9 @@ main .hero-img a:hover::after{
 .skills{
     border-top: 1px dashed var(--default-clr);
 }
+.skills .column-oneforth.mt5{
+    margin-top: var(--spacer);
+}
 
 /* Portfolio Section Styling */
 .portfolio{
@@ -463,6 +466,9 @@ footer{
     .column-oneforth{
         width: 50%;
         margin-top: 1rem;
+    }
+    .skills .column-oneforth.mt5{
+        margin-top: 0;
     }
     .about-me .column-onethird{
         order: 1;
