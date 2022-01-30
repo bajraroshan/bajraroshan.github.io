@@ -1,14 +1,14 @@
 $(document).ready(function () {
-  $(".hamburger-icon").on( "click", function() {
-    $(this).toggleClass("open", 1000);
-    $(this).parent().toggleClass("mobilenav-open", 1000);
+  $(".hamburger-icon").click(function () {
+    $(this).toggleClass("open");
+    $(this).parent().toggleClass("mobilenav-open");
   });
 
   function revoke(){
     if ($(window).width() < 767) {
-      $('nav ul li a').on( "click", function() {
-        $(this).parents("div").removeClass("open", 1000);
-        $(this).parents("nav").removeClass("mobilenav-open", 1000);
+      $('nav ul li a').click(function(){
+        $(this).parent().parent().siblings(".hamburger-icon").removeClass("open");
+        $(this).parents("nav").removeClass("mobilenav-open");
       });
     }
   } 
