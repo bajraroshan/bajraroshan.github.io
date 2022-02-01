@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  $(".hamburger-icon").click(function () {
+  $(".hamburger-icon").on(click, function () {
     $(this).toggleClass("open");
     $(this).parent().toggleClass("mobilenav-open");
   });
 
   function revoke(){
     if ($(window).width() < 767) {
-      $('nav ul li a').click(function(){
+      $('nav ul li a').on(click, function(){
         $(this).parent().parent().siblings(".hamburger-icon").removeClass("open");
         $(this).parents("nav").removeClass("mobilenav-open");
       });

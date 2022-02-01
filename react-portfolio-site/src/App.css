@@ -1,38 +1,768 @@
-.App {
+/* Reset CSS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and but337ns */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ends Reset CSS */
+
+
+/* Variable Declaration for the entire site */
+:root {
+  --default-clr: #333;
+  --primary-clr: #2B2243;
+  --secondary-clr: #99D4D1;
+  --white: #FFF;
+
+  --ff: 'Source Sans Pro', sans-serif;
+  --ff-heading: 'Playfair Display', serif;
+  --fz: 16px;
+
+  --font-m: calc(var(--fz)*1.5);
+  --font-l: calc(var(--fz)*2);
+  --font-xl: calc(var(--fz)*3);
+
+  --fw-l: 200;
+  --fw-n: 400;
+  --fw-b: 700;
+
+  --p10: 10px;
+  --p20: 20px;
+
+  --br: 0.25rem;
+
+  --ma: 0 auto;
+
+  --spacer: 50px;
+  --lspacer: calc(var(--spacer)*2);
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+      --fz: 12px;
+      --spacer: 30px;
+  }
+}
+
+
+/* Universal Styling  */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Defining Body background, Color and font */
+body {
+  background-color: var(--secondaryy-color);
+  font-family: var(--ff);
+  color: var(--default-clr);
+}
+
+/* Heading Styling for the site */
+h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--font-l);
+}
+
+h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--font-xl);
+}
+
+h3 {
+  color: var(--secondary-clr);
+  font-family: var(--ff-heading);
+  font-size: calc(var(--fz)*1.25);
+  font-style: italic;
+}
+
+h3::after {
+  content: "......";
+}
+
+h4 {
+  font-family: var(--ff-heading);
+  font-size: var(--font-m);
+}
+
+/* Anchor tag styling */
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* listing styling */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Layout styling */
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: var(--ma);
+}
+
+.row {
+  margin: 0 -1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spacer {
+  padding: var(--lspacer) 0;
+}
+
+.spacer-top {
+  padding-top: var(--spacer);
+}
+
+.center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[class*="column-"] {
+  padding: 0 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.column-full {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.column-half {
+  width: 50%;
+}
+
+.column-onethird {
+  width: 33.33%;
+}
+
+.column-twothird {
+  width: 66.66%;
+}
+
+.column-oneforth {
+  width: 25%;
+  margin: 1rem 0;
+}
+
+.s-only {
+  display: none;
+}
+
+/* Header Styling Starts */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 var(--lspacer);
+  width: 100%;
+  z-index: 1;
+}
+
+header .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  max-width: 1170px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* Header logo typetext */
+header h1 {
+  color: var(--white);
+  text-transform: uppercase;
+  justify-content: flex-start;
+}
+
+/* Navigation Styling */
+header nav {
+  justify-content: flex-end;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline-block;
+}
+
+header nav ul li a {
+  font-weight: var(--fw-l);
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  transition: padding 0.8s linear;
+  position: relative;
+  cursor: pointer;
+}
+
+header nav ul li a::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: height 0.2s ease-out;
+  z-index: -1;
+  inset: 0px;
+}
+
+header nav ul li:last-child a::after {
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--secondary-clr);
+}
+
+header nav ul li:hover a::after {
+  height: 100%;
+}
+
+header nav .hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+header nav .hamburger-icon span {
+  width: 2.1875rem;
+  height: 0.1875rem;
+  background-color: white;
+  margin: .375rem 0;
+  transition: 0.4s;
+  display: block;
+}
+
+header nav .hamburger-icon.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+header nav .hamburger-icon.open .bar2 {
+  opacity: 0;
+}
+
+header nav .hamburger-icon.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* Header Styling Ends */
+
+/* Main Content Styling Starts Here */
+/* Hero Image Styling */
+main .hero-img {
+  background-image: url(./assets/images/hero-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  isolation: isolate;
+}
+
+main .hero-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+main .hero-img .row {
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+main .hero-img .hero-img-content {
+  letter-spacing: 0.0625rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+main .hero-img h2 {
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+main .hero-img a {
+  color: var(--white);
+  font-family: var(--ff-sans-pro);
+  font-weight: var(--fw-l);
+  text-transform: uppercase;
+  transition: all ease 0.2s;
+}
+
+main .hero-img a:hover {
+  color: var(--secondary-clr);
+}
+
+main .hero-img a::after {
+  content: "→";
+  transition: padding ease 0.2s;
+}
+
+main .hero-img a:hover::after {
+  padding-left: .5rem;
+}
+
+/* About Me Section Styling */
+.about-me .row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* About Me section Heading styling override */
+.about-me h3 {
+  margin-bottom: .5rem;
+}
+
+.about-me h2 {
+  color: var(--primary-clr);
+  margin-bottom: 1.25rem;
+}
+
+.about-me a.btn {
+  color: var(--white);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 1.25rem;
+  background-color: var(--secondary-clr);
+  border: none;
+  font-weight: var(--fw-l);
+  cursor: pointer;
+  border-radius: var(--br);
+  transition: all ease 0.2s;
+  text-transform: uppercase;
+}
+
+.about-me a.btn:hover {
+  background-color: var(--primary-clr);
+}
+
+/* About me image styling */
+.about-me figure {
+  position: relative;
+}
+
+.about-me figure::before {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-clr);
+  width: 100%;
+  height: calc(100% + 4rem);
+  z-index: -1;
+  top: -2rem;
+  left: -2rem;
+  border-radius: var(--br);
+}
+
+.about-me figure::after {
+  content: "";
+  position: absolute;
+  right: -3rem;
+  bottom: 2rem;
+  width: 3rem;
+  height: 40%;
+  background-image: radial-gradient(circle, #2B2243 20%, transparent 10%), radial-gradient(circle, #2B2243 20%, transparent 10%);
+  background-size: 10px 10px;
+  background-position: 0 0, 150px 150px;
+  opacity: 0.5;
+}
+
+.about-me figure img {
+  border-radius: var(--br);
+}
+
+/* Skills */
+.skills {
+  border-top: 1px dashed var(--default-clr);
+}
+
+.skills .column-oneforth.mt5 {
+  margin-top: var(--spacer);
+}
+
+/* Slick Slider */
+.slick-list {
+  margin-bottom: var(--spacer);
+}
+
+.slick-next:before, .slick-prev:before {
+  color: var(--primary-clr)
+}
+.slick-slide{
+  width: 20px !important;
+}
+
+/* Portfolio Section Styling */
+.portfolio {
+  background-color: var(--primary-clr);
+  padding-bottom: var(--spacer);
+}
+
+/* Portfolio Heading restyling */
+.portfolio h2 {
+  color: var(--white);
+  margin-bottom: var(--spacer);
+}
+
+/* Cardbox styling */
+.card-box {
+  flex-basis: 50%;
+  margin-bottom: calc(var(--spacer)/2);
+  padding: 0 1rem;
+}
+
+.card-box a {
+  color: var(--white);
+}
+
+.single-card {
+  transition: all ease 0.2s;
+}
+
+.card-box .image-holder {
+  background-color: var(--white);
+  border: 2px solid var(--secondary-clr);
+  border-radius: var(--br) var(--br) 0 0;
+  transition: all ease 0.2s;
+  overflow: hidden;
+}
+
+.card-box .image-holder img {
+  transition: all ease 0.2s;
+}
+
+.card-box:hover .image-holder img {
+  transform: scale(1.1);
+}
+
+.card-box:hover .single-card {
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.7);
+}
+
+.card-box .content-holder {
+  background-color: var(--secondary-clr);
+  border-radius: 0 0 var(--br) var(--br);
+  padding: var(--p10) var(--p20);
+  font-weight: var(--fw-l);
+}
+
+.card-btn-wrap {
+  margin: 1rem 0;
+}
+
+.card-btn-wrap a {
+  border: 1px solid var(--default-clr);
+  padding: 0.5rem 1rem;
+  border-radius: var(--br);
+  background-color: var(--default-clr);
+  margin-right: 0.5rem;
+  transition: all ease 0.2s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.card-btn-wrap a:hover {
+  background-color: var(--primary-clr);
+}
+
+/* Contact Section Styling */
+/* Contact Heading restyling */
+.contact h2 {
+  padding-bottom: var(--spacer);
+}
+
+/* Contact listing styling */
+.contact-content ul li {
+  padding-bottom: .5rem;
+}
+
+.contact-content ul li a {
+  color: var(--primary-clr);
+}
+
+.contact-content ul li i {
+  color: var(--primary-clr);
+}
+
+/* Contact Form Styling */
+.form-label {
+  margin-bottom: 1rem;
+  ;
+}
+
+.form-label label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.form-label input, .form-label textarea {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: var(--br);
+  border: 1px solid var(--primary-clr);
+  transition: all ease 0.2s;
+ 
+}
+.form-label textarea {
+ min-height: 15rem;
+ 
+}
+
+.form-label input:focus, .form-label textarea:focus {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  outline: none;
+
+}
+
+.form-label .submit {
+  background-color: var(--primary-clr);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  font-weight: var(--fw-l);
+  border: none;
+  width: auto;
+  display: block;
+  border-radius: var(--br);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-label .submit:hover {
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+}
+
+/* Main Content Styling Ends */
+
+/* Footer styling */
+footer {
+  background-color: var(--default-clr);
+  color: var(--white);
+  text-align: center;
+  padding: var(--spacer) 0;
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 1280px) {
+  header, .container {
+      padding: 0 3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .about-me figure::after {
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+
+  header nav ul li a {
+      padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header {
+      padding: 0 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      position: fixed;
+  }
+
+  header .wrapper{
+      padding: .5rem 0;
+  }
+
+  .container {
+      padding: 0 2rem;
+  }
+
+  header nav ul{
+      display: none;
+  }
+
+  header nav .hamburger-icon{
+      display: block;
+      z-index: 9;
+      position: relative;
+  }
+
+  header nav.mobilenav-open ul{
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      padding: 20% 0;
+      background-color: var(--primary-clr);
+      margin-top: 0;
+      transition: 0.4s ease-in-out all;
+  }
+
+  header nav.mobilenav-open ul li{
+      display: block;
+      text-align: center;
+      padding: 1rem;
+  }
+
+  .column-half, .column-onethird {
+      width: 100%;
+  }
+
+  .column-oneforth {
+      width: 50%;
+      margin-top: 1rem;
+  }
+
+  .skills .column-oneforth.mt5 {
+      margin-top: 0;
+  }
+
+  .about-me .column-onethird {
+      order: 1;
+  }
+
+  .about-me .column-half {
+      order: 2;
+  }
+
+  .about-me figure {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+  }
+
+  .about-me figure img {
+      width: 100%;
+  }
+
+  .about-me figure::before {
+      left: -1rem;
+      top: -1rem;
+      height: calc(100% + 2rem);
+  }
+
+  .card-box {
+      flex-basis: 100%;
+  }
+
+  .l-only {
+      display: none;
+  }
+
+  .s-only {
+      display: block;
+  }
+
+  .card-box .image-holder img {
+      width: 100%;
+      ;
+  }
+
+  .slick-next {
+      right: 0;
+  }
+
+  .slick-prev {
+      left: 0;
+      z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .column-oneforth {
+      width: 100%;
   }
 }
