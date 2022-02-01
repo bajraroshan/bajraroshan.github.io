@@ -4,7 +4,7 @@
 This is my portfolio site "Roshan Bajracharya - Portfolio Site" basically showcasing my learnings from the course. The language used in this particular site are HTML and CSS. I have tried to use all the knowledge that I have gained from the class. I have tried to use pseudo classes and elements, CSS variables that were taught in the class.
 
 ## Demo
-![Roshan Bajracharya Portfolio Screenshot](https://bajraroshan.github.io/assets/images/portfolio-site-screenshot.png)
+![Roshan Bajracharya Portfolio Screenshot](https://bajraroshan.github.io/static-site/assets/images/portfolio-site-screenshot.png)
 
 ## Important Links
 Github Page: https://bajraroshan.github.io//<br/>
@@ -14,7 +14,9 @@ Github Repositories: https://github.com/bajraroshan/bajraroshan.github.io
 Semantic HTML<br/>
 CSS - CSS Variables, Pseudo Classes and Elements, Custom Forms, Typography, CSS Resets, Responsive Design<br/>
 Image Alt Attributes<br/>
-Image Optimization
+Image Optimization<br />
+Converted the site in Whole site into React App
+
 
 ## License
 Copyright (c) [2021] [Roshan Bajracharya]
