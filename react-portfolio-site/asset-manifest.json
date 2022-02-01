@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/react-site/static/css/main.9c5e226c.css",
+    "main.js": "/react-site/static/js/main.8cf46842.js",
+    "static/js/787.ce9a24bf.chunk.js": "/react-site/static/js/787.ce9a24bf.chunk.js",
+    "static/media/hero-img.jpg": "/react-site/static/media/hero-img.8223872e1652490fb355.jpg",
+    "static/media/roshan_bajracharya.jpg": "/react-site/static/media/roshan_bajracharya.ddf50391b00f46b3505e.jpg",
+    "static/media/weather-forecast.png": "/react-site/static/media/weather-forecast.0821aeb6df587ec782ae.png",
+    "static/media/career-headstart-small.png": "/react-site/static/media/career-headstart-small.f2aa7d723803f24cd08a.png",
+    "static/media/portfolio-roshan.jpg": "/react-site/static/media/portfolio-roshan.b484721981264b5ae49f.jpg",
+    "static/media/recipe.png": "/react-site/static/media/recipe.82939e636484ca5dd8df.png",
+    "static/media/css3.png": "/react-site/static/media/css3.cb49c02baa95ffd3c785.png",
+    "static/media/jQuery-logo.png": "/react-site/static/media/jQuery-logo.d387113d79fd476c1820.png",
+    "static/media/quiz-wiz.png": "/react-site/static/media/quiz-wiz.1970ab5303f7cbf61fe9.png",
+    "static/media/day-planner.png": "/react-site/static/media/day-planner.8fdad8f2ac00474cc9bb.png",
+    "static/media/mysql.png": "/react-site/static/media/mysql.b9bacef6cc4d2fecc409.png",
+    "static/media/nodejs.png": "/react-site/static/media/nodejs.cb7b10c33ecce3ff6f21.png",
+    "static/media/javascript-logo.png": "/react-site/static/media/javascript-logo.b30087edf285cf16184a.png",
+    "static/media/express.png": "/react-site/static/media/express.9dbff5c328693ccf8ccb.png",
+    "static/media/html5.png": "/react-site/static/media/html5.a1ea766a59ee1a9bf265.png",
+    "static/media/github.png": "/react-site/static/media/github.7a793715b1821b15a29a.png",
+    "index.html": "/react-site/index.html",
+    "main.9c5e226c.css.map": "/react-site/static/css/main.9c5e226c.css.map",
+    "main.8cf46842.js.map": "/react-site/static/js/main.8cf46842.js.map",
+    "787.ce9a24bf.chunk.js.map": "/react-site/static/js/787.ce9a24bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c5e226c.css",
+    "static/js/main.8cf46842.js"
+  ]
+}
