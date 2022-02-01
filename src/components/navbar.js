@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import $ from "jquery";
 
 
-
 function revoke(){
   if ($(window).width() < 767) {
     $('nav ul li a').click(function(){

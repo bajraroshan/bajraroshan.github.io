@@ -7,6 +7,7 @@ import Skills from "./components/skills";
 import Portfolio from "./components/portfolio";
 import Contact from "./components/contact";
 
+// import "semantic-ui-css/semantic.min.css";
 
 import "./App.css";
 
